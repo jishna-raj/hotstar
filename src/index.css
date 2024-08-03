@@ -1,0 +1,31 @@
+*{
+  margin: 0px;
+  padding: 0px;
+  font-family:"Inter", sans-serif;
+}
+
+
+body{
+  overflow-x: hidden;
+  background-color:black ;
+}
+
+.input-group {
+  position: relative;
+}
+
+.input-group-text {
+  background-color: transparent; /* Optional: Remove default background */
+  border: none; /* Optional: Remove default border */
+  padding: 0; /* Optional: Adjust padding */
+  margin-right: -1px; /* Optional: Remove gap between icon and input */
+}
+
+.input-group-text .fa-magnifying-glass {
+  color: #666; /* Optional: Set icon color */
+}
+
+.form-control {
+  border-radius: 0; /* Optional: Remove border radius to match input-group */
+  padding-left: 1.5em; /* Adjust padding to ensure text isn't hidden behind the icon */
+}

@@ -1,0 +1,72 @@
+
+  .button{
+    background-color: rgb(7, 67, 145);
+    font-weight: 600;
+  
+  }
+  
+  
+  .button1{
+    background-color: rgb(250, 245, 245);
+    font-weight: 700;
+    width:250px
+  
+  }
+  .button1:hover{
+    background-color:rgb(161, 160, 160,.2); 
+  }
+  .button2{
+    background-color: rgb(161, 160, 160,.3);
+    font-weight: 700;
+    width:100px
+  
+  }
+  .button2:hover{
+    background-color:rgb(161, 160, 160,.2); 
+  }
+  .vertical-line-text {
+    display: inline-flex;
+    align-items: center;
+    white-space: nowrap;
+    color: white;
+  }
+  
+  .vertical-line-text span {
+    position: relative;
+    padding: 0 10px;
+    margin-right: 20px; 
+  }
+  
+  .vertical-line-text span::after {
+    content: '|';
+    position: absolute;
+    right: -15px; /* Position the vertical line after the word */
+    color: rgba(245, 241, 241, 0.5); 
+  }
+  
+  .vertical-line-text span:last-child::after {
+    content: ''; /* Remove the line after the last word */
+  }
+
+.dot-separator {
+  display: inline-flex;
+  align-items: center;
+  font-size: 14px; /* Adjust font size as needed */
+  font-size: 20px;
+}
+
+.dot-separator::before {
+  content: '•'; /* Dot character */
+  margin: 0 8px; /* Space between dot and text */
+  color: rgb(117, 115, 115); /* Adjust color to match your design */
+  size: 20px;
+  margin-right: 10px;
+}
+
+.dot-separator span:not(:first-child)::before {
+  content: ' • '; /* Dot between each text */
+  color: rgb(141, 137, 137); /* Adjust color to match your design */
+  margin-right: 10px;
+  margin-left: 10px;
+}
+
