@@ -10,8 +10,7 @@ function Navbar() {
         <Col
           md={1}
           style={{
-            position: "absolute",
-            padding: "25px",
+            position: "fixed",
             width: "50%",
             zIndex: 1000,
           }}

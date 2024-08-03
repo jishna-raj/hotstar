@@ -16,7 +16,6 @@ import "./header.css";
 
 function Header() {
   const [touch, setTouch] = useState(false);
-  const [showLabel, setShowLabel] = useState(false);
 
   const label = (text) => {
     return (
@@ -25,10 +24,11 @@ function Header() {
           <Fade
             style={{
               position: "absolute",
-              left: "12vh",
+              left: "13vh",
               color: "#fff",
               fontSize: "22px",
               marginTop: "-8px",
+              padding:'0px'
             }}
           >
             <span className="nav-label">{text}</span>
@@ -79,7 +79,7 @@ function Header() {
                 }}
               >
                 <div className="nav-wrapper">
-                  <Link to="/Login" style={{ display: "flex" }}>
+                  <Link to="/mypage" style={{ display: "flex" }}>
                     <FontAwesomeIcon
                       icon={faCircleUser}
                       // size="sm"
@@ -106,7 +106,7 @@ function Header() {
                     />
                     {label("Home")}
                   </Link>
-                  <Link to="/tv" style={{ display: "flex" }}>
+                  <Link to="/" style={{ display: "flex" }}>
                     <FontAwesomeIcon
                       icon={faTv}
                       // size="sm"
@@ -115,7 +115,7 @@ function Header() {
                     />
                     {label("TV")}
                   </Link>
-                  <Link to={"/movies"} style={{ display: "flex" }}>
+                  <Link to={"/"} style={{ display: "flex" }}>
                     <FontAwesomeIcon
                       icon={faFilm}
                       // size="sm"
@@ -124,7 +124,7 @@ function Header() {
                     />
                     {label("Movies")}
                   </Link>
-                  <Link to="/sports" style={{ display: "flex" }}>
+                  <Link to="/" style={{ display: "flex" }}>
                     <FontAwesomeIcon
                       icon={faBaseball}
                       // size="sm"
@@ -133,7 +133,7 @@ function Header() {
                     />
                     {label("Sports")}
                   </Link>
-                  <Link to="/categories" style={{ display: "flex" }}>
+                  <Link to="/" style={{ display: "flex" }}>
                     <FontAwesomeIcon
                       icon={faList}
                       // size="sm"
@@ -147,65 +147,6 @@ function Header() {
             </div>
           </div>
 
-          {/* <div className="col-md-10 m-0 p-0">
-            <div className="row m-0 p-0" id="fade" style={{ width: "40px" }}>
-              {touch && (
-                <Fade>
-                  <div
-                    className="col-md-4 "
-                    id="navbar"
-                    style={{
-                      height: "100vh",
-                      textAlign: "center",
-                      fontWeight: "bold",
-                      color: "white",
-                      opacity: "0.7",
-                      marginTop: "75px",
-                      marginLeft: "11px",
-                    }}
-                  >
-                    <h4
-                      className="mb-5 pt-5"
-                      style={{ fontSize: "17px", marginTop: "63px" }}
-                    >
-                      MySpace
-                    </h4>
-                    <h4 className="mb-5" style={{ fontSize: "17px" }}>
-                      Search
-                    </h4>
-                    <h4
-                      className="mb-4"
-                      style={{ fontSize: "17px", marginTop: "25px" }}
-                    >
-                      Home
-                    </h4>
-                    <h4
-                      style={{
-                        fontSize: "17px",
-                        marginTop: "33px",
-                        marginBottom: "37px",
-                      }}
-                    >
-                      Tv
-                    </h4>
-                    <Link to={"/movies"}>
-                      <h4 className="mb-5" style={{ fontSize: "17px" }}>
-                        Movies
-                      </h4>
-                    </Link>
-                    <h4 className="mb-5" style={{ fontSize: "17px" }}>
-                      Sports
-                    </h4>
-                    <h4 className="mb-5" style={{ fontSize: "17px" }}>
-                      Categories
-                    </h4>
-                  </div>
-                </Fade>
-              )}
-
-              <div className="col-md-8"></div>
-            </div>
-          </div> */}
         </div>
       </div>
     </>

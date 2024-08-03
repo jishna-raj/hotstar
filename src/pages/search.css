@@ -1,0 +1,33 @@
+
+.search-icon {
+    background: transparent;
+    border: none;
+    color: #f4f4f5;
+
+}
+
+.search-input {
+    background-color: rgb(248, 242, 242, 0.3);
+    border: 1px solid #ced4da;
+    border-radius: 15px;
+    padding-left: 2.5rem;
+    
+    color: #f8fbfd;
+}
+
+.input-group-prepend .input-group-text {
+    border: none;
+    background-color: transparent;
+}
+
+.input-group-prepend {
+    position: relative;
+}
+
+.input-group-prepend .search-icon {
+    position: absolute;
+    left: 0.5rem;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 1rem;
+}

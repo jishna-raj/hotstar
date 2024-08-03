@@ -156,7 +156,7 @@ function Home() {
     <div className="container-fluid" style={{marginLeft:'78px'}}>
 
 <div>
-            <h4 className=' ms-3' style={{fontSize:'22px', color:'white'}}>Latest Release</h4>
+            <h4 className=' ms-3' style={{fontSize:'22px', color:'white',marginTop:'65px'}}>Latest Release</h4>
     
             <div className="slider-container">
           <Slider {...settings}>

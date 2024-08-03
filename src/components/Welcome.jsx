@@ -55,7 +55,7 @@ function Welcome() {
           marginLeft: "100px",
         }}
       >
-        <div className="row" style={{ marginTop: "30vh" }}>
+        <div className="row" style={{ marginTop: "17vh" }}>
           <div className="col-md-6">
             <div className="d-flex flex-column align-items-start ">
               <img src={bheesh} alt="img" width={"220px"} />

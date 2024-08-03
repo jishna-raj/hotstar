@@ -1,10 +1,20 @@
 import { faMagnifyingGlass } from '@fortawesome/free-solid-svg-icons';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import React, { useEffect, useState } from 'react';
 import Card from 'react-bootstrap/Card';
+import Container from 'react-bootstrap/Container';
+import Row from 'react-bootstrap/Row';
+import Col from 'react-bootstrap/Col';
+import './search.css'
+import { Link } from 'react-router-dom';
+import { faHouse } from '@fortawesome/free-solid-svg-icons';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+
+
 
 function Home() {
   const [movies, setMovies] = useState([]);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState(null);
 
   const getMovies = async () => {
     try {
@@ -15,7 +25,9 @@ function Home() {
       const json = await response.json();
       setMovies(json.results);
     } catch (error) {
-      console.error('Error fetching data:', error);
+      setError(error.message);
+    } finally {
+      setLoading(false);
     }
   };
 
@@ -24,28 +36,42 @@ function Home() {
   }, []);
 
   return (
-    <div className='p-0'>
-      <div className='row'>
-  <div className="col-md-10 ms-4 p-4">
-    <div className="input-group">
-      <span className="input-group-text"><FontAwesomeIcon icon={faMagnifyingGlass} /></span>
-      <input type='text' placeholder='Movies Shows and More' className='form-control'/>
-    </div>
-  </div>
-  <div className="col-md-2"></div>
-</div>
-
-      <div className="row">
-      {movies.map((movie) => (
-          <div key={movie.id} className='col-lg-3 col-md-4 col-sm-6 mb-4 shadow rounded'>
-            <Card style={{ width: '100%',height:'100%',padding:'12px' }}>
-              <Card.Img variant='top' src={`https://image.tmdb.org/t/p/w500/${movie.poster_path}`} alt={movie.title} />
-              
-            </Card>
+    <Container fluid className='p-0'>
+      <Row className='mb-4'>
+        <Col md={12} className='ms-2 p-5'>
+          <div className='d-flex'>
+            <div className="input-group mb-4">
+              <div className="input-group-prepend">
+                <span className="input-group-text search-icon">
+                  <FontAwesomeIcon icon={faMagnifyingGlass} />
+                </span>
+              </div>
+              <input
+                type='text'
+                placeholder='Movies, Shows, and More'
+                className='form-control search-input'
+              />
+            </div>
+            <Link to={'/'}><FontAwesomeIcon icon={faHouse} style={{color: "#ebedef", marginLeft:'150px'}} /></Link>
           </div>
+        </Col>
+      </Row>
+
+      {/* Movie Cards */}
+      <Row className='p-4'>
+
+        {movies.map((movie) => (
+          <Col key={movie.id} lg={3} md={4} sm={6} className='mb-4'>
+            <Card className='shadow rounded'>
+              <Card.Img variant='top' src={`https://image.tmdb.org/t/p/w500/${movie.poster_path}`} alt={movie.title} />
+              <Card.Body>
+                <Card.Title>{movie.title}</Card.Title>
+              </Card.Body>
+            </Card>
+          </Col>
         ))}
-      </div>
-    </div>
+      </Row>
+    </Container>
   );
 }
 
